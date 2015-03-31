@@ -1,0 +1,6 @@
+#managed by puppet
+#
+cat <<EOF
+set superusers="<%= scope['grub::params::grub2_superusers'] %>"
+password_pbkdf2 <%= scope['grub::params::grub2_superusers'] %> <%= scope['grub::params::grub2_sha512_hash'] %>
+EOF
