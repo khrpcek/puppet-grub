@@ -14,21 +14,7 @@ class grub::config inherits grub::params {
             onlyif  => "match password size == 0";
           }
         }
-        #'6': {
-        #  augeas { 'grub.conf/password':
-        #    context => "/files/boot/grub/grub.conf",            
-#incl   => '/boot/grub/grub.conf',
-            #lens   => 'grub.lns',
-         #   changes => [
-         #     "ins password after hiddenmenu",
-         #     "clear password/encrypted",
-         #     "set password \$1\$HQxCn0\$z4wH9dxlbbVLcSp1kjwuo0"
-          #  ],
-          #  onlyif  => "match password size == 0";
-          #}
-        #}
         '7': {
-        #  do more stuff
           file { '01_users':
             path   => '/etc/grub.d/01_users',
             ensure => 'file',
